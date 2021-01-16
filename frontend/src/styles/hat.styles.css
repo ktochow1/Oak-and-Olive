@@ -1,0 +1,57 @@
+.hat-div {
+    /* padding: 5px; */
+    /* flex: 33.33%; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* align-items: center; */
+    /* width: 50%; */
+    /* display: block; */
+    /* grid-template-columns: 40px 50px auto 50px 40px;
+    grid-template-rows: 25% 100px auto; */
+    /* grid-template-areas: "pic pic" */  
+    /* float: left; */
+    /* width: 33.33%; */
+    border: 0px;
+    margin: 2px;
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    grid-gap: 10px;
+    grid-auto-rows: 320px;
+
+}
+
+.category-title {
+    font-size: 20px;
+    font-family: Montserrat;
+    color: rgb(101, 141, 74);
+    align-self: center;
+    
+}
+
+.item-title {
+    font-family: Montserrat;
+    color: rgb(101, 141, 74);
+    text-align: center;
+    /* padding: 1px; */
+    margin: 1px;
+}
+
+.item-div {
+    /* padding: 10px; */
+    margin: 5px;
+}
+
+.image {
+    object-fit: cover;
+    width: 100%;
+    /* height: 100%; */
+    /* max-height: 100%; */
+}
+
+.price {
+    text-align: center;
+    font-size: 10px;
+    margin: 2px;
+    /* padding: 5px; */
+}

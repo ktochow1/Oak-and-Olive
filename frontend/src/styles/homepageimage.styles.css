@@ -1,0 +1,13 @@
+.home-page-image {
+    background-color: antiquewhite;
+    /* justify-self: center; */
+    margin-top: 0%;
+
+    display: block;
+    text-align: center;
+    /* align-content: center; */
+}
+
+.test {
+    margin-top: 0%;
+}
