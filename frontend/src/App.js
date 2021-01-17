@@ -5,7 +5,7 @@ import BottomContainer from './containers/BottomContainer'
 import {Route, Switch, Redirect} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import SignUpSignIn from './pages/SignUpSignIn'
-import {auth} from './firebase/firebase.utils'
+import {auth, createUserProfileDoc} from './firebase/firebase.utils'
 import {connect} from 'react-redux'
 // import {setCurrentUser} from './redux/user/user.actions'
 // import Routes from './components/Routes'
@@ -24,11 +24,27 @@ class App extends React.Component {
     //user parameter is the user state in my app
     //auth subscriber (onAuthStateChanged) is always listening to user param and keeps sending
     //user authenticated obj UNTIL user signs out
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
+      // this.setState({
+      //   currentUser: user
+      // })
+      // console.log(user)
+      if(userAuth){
+        const userRef = await createUserProfileDoc(userAuth)
+        userRef.onSnapshot(snapShot => {
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
+          })
+          console.log(this.state)
+          })
+        
+      }
       this.setState({
-        currentUser: user
+        currentUser: userAuth
       })
-      console.log(user)
     })
   }
 
@@ -47,7 +63,7 @@ class App extends React.Component {
             <>
             
             <NavBar currentUser={this.state.currentUser} hideImage={this.hideImage} />  
-            {console.log(this.state.currentUser)}
+            {console.log('in nav bar',this.state.currentUser)}
              <Switch>  
               <Route exact path='/'><HomePage /></Route>
               <Route path="/hats"><HatContainer /></Route>
@@ -58,7 +74,7 @@ class App extends React.Component {
                
               {/* </Route> */}
             </Switch>   
-            // {/* </SessionContext.Provider> */}
+           {/* </SessionContext.Provider> */}
           </>
         )
     }
