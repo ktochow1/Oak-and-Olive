@@ -39,7 +39,7 @@ class SignInForm extends React.Component {
     render(){ 
         return(
             <div className="sign-in-form-div">
-            <h3 id="signin-title">I'm back!</h3>
+            <h3 className="signin-title">I'm back!</h3>
             <form onSubmit={this.handleSubmit} >
                 <label for="email" className="SI-form-label">Email</label><br />
                  <input className="SI-form-input" onChange={this.handleChange} placeholder="Email" name="email" value={this.state.email} type="email"/><br />

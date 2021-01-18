@@ -12,7 +12,8 @@
     margin: 0px 20px 20px 66px;
     padding: 0px 30px 10px 85px;
     font-family: "Montserrat";
-}
+    color: rgb(29, 73, 3)
+;}
 
 .form-label {
     padding: 6px 30px 10px 0px;
@@ -31,7 +32,14 @@
     width: 90px;
     border: 2px solid burlywood;
     font-family: 'Montserrat';
-    /* font-; */
+    cursor: pointer;
+}
+#submit-button:hover {
+    background-color:rgb(228, 241, 221)
+}
+#submit-button:active {
+    background-color:rgb(205, 241, 184);
+    transform: translateY(4px);
 }
 
     /* .form-input:focus {
