@@ -1,6 +1,8 @@
 import React from 'react'
 import {auth, createUserProfileDoc} from '../firebase/firebase.utils'
 
+import '../styles/signUpForm.styles.css'
+
 // import {auth, createUserProfile, firebaseSignUpNewUsers} from '../firebase/firebase.utils'
 
 
@@ -142,13 +144,18 @@ class SignUpForm extends React.Component {
     render(){
         const {displayName, email, password, confirmPassword} = this.state
         return(
-            <div>
+            <div className="sign-up-form-div">
+                <h3 id="signup-title">New? Sign Up Below!</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="displayName" value={displayName} placeholder="Display Name" onChange={this.handleChange} required />
-                    <input type="email" name="email" value={email} placeholder="Email" onChange={this.handleChange} required />
-                    <input type="password" name="password" value={password} placeholder="Password" onChange={this.handleChange} required />
-                    <input type="password" name="confirmPassword" value={confirmPassword} placeholder="Confirm Password" onChange={this.handleChange} required />
-                    <input type="submit" value="Sign Up"/>
+                    <label for="displayName" className="form-label">Choose a display name</label><br/>
+                     <input id="display-name" className="form-input" type="text" name="displayName" value={displayName} onChange={this.handleChange} required /><br />
+                    <label for="email" className="form-label">Enter Email</label><br />
+                    <input type="email" className="form-input" name="email" value={email} onChange={this.handleChange} required /><br />
+                    <label for="password" className="form-label">Choose a Password</label><br />
+                    <input type="password" className="form-input" name="password" value={password} onChange={this.handleChange} required /><br />
+                    <label for="confirm-password" className="form-label">Confirm Password</label><br />
+                    <input type="password" className="form-input" name="confirmPassword" value={confirmPassword} onChange={this.handleChange} required /><br />
+                    <input type="submit" id="submit-button" value="Sign Up"/>
                 </form>
             </div>
 

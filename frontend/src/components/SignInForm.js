@@ -3,6 +3,8 @@ import firebase from 'firebase/app'
 
 import {auth, signInWithGoogle} from '../firebase/firebase.utils'
 
+import '../styles/signInForm.styles.css'
+
 class SignInForm extends React.Component {
     constructor(props){
         super(props)
@@ -23,14 +25,30 @@ class SignInForm extends React.Component {
          signInWithGoogle()
     }
 
+    handleSubmit = async e => {
+        e.preventDefault()
+        const {email, password} = this.state
+        try {
+            await auth.signInWithEmailAndPassword(email, password)
+            this.setState({email: '', password: ''})
+        } catch(error) {
+            console.log(error)
+        }
+    }
+
     render(){ 
         return(
+            <div className="sign-in-form-div">
+            <h3 id="signin-title">I'm back!</h3>
             <form onSubmit={this.handleSubmit} >
-                <input onChange={this.handleChange} placeholder="Email" name="email" value={this.state.email} type="email"/>
-                <input onChange={this.handleChange} placeholder="Password" name="password" value={this.state.password} type="password" />
-                <input type="submit" value="Log In"/>
-                <button onClick={this.handleClick}>Sign In with Google</button>
+                <label for="email" className="SI-form-label">Email</label><br />
+                 <input className="SI-form-input" onChange={this.handleChange} placeholder="Email" name="email" value={this.state.email} type="email"/><br />
+                <label for="password" className="SI-form-label">Password</label><br />
+                <input className="SI-form-input" onChange={this.handleChange} placeholder="Password" name="password" value={this.state.password} type="password" /><br />
+                <input className="submit-button" type="submit" value="Log In"/><br />
+                <button className="submit-button" id="google-signin-btn" onClick={this.handleClick}>Sign In with Google</button>
             </form>
+            </div>
         )
     }
 

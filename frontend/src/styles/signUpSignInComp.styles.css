@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    float: none;
+    display: flexbox;
+}
+
+#signup-title {
+    margin: 0px 20px 20px 66px;
+    padding: 0px 30px 10px 85px;
+    font-family: "Montserrat";
+}
+
+#signin-title {
+    padding: 8px 50px 10px 100px;
+    margin: 8px 50px 10px 150px;
+    font-family: "Montserrat";
+}

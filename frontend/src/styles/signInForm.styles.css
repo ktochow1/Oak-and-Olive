@@ -1,0 +1,35 @@
+.SI-form-label {
+    padding: 6px 30px 10px 0px;
+    margin: 8px 4px 8px 150px;
+    font-family: 'Montserrat';
+}
+
+#signin-title {
+    margin: 0px 20px 20px 0px;
+    padding: 0px 30px 10px 0px;
+    /* font-size: 200/ */
+}
+
+.SI-form-input {
+    width: 200px;
+    padding: 8px 50px 10px 10px;
+    margin: 8px 50px 10px 150px;
+    box-sizing: border-box;
+    border: 2px solid burlywood;
+    font-size: 16px;
+    font-family: 'Montserrat';
+
+}
+
+.sign-in-form-div {
+    float: right;
+    width: 50%;
+}
+
+.submit-button {
+    padding: 6px 10px 6px 10px;
+    margin: 15px 20px 10px 150px;
+    width: 90px;
+    border: 2px solid burlywood;
+    font-family: 'Montserrat';
+}
