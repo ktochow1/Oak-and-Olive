@@ -5,6 +5,10 @@
 
     padding-top: 0%;
     text-align: center;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
 }
 
 
@@ -26,20 +30,55 @@
     color: rgb(101, 141, 74);
     font-family: 'Montserrat';
     font-weight: 100;
-    font-size: 35px;
+    font-size: 40px;
     text-align: center;
     padding-top: 0%;
-    padding-top: 0%;
-    margin-top: 2px;
+    padding-left: 20px;
+    margin-top: 14px;
     margin-bottom: 1px;
+    margin-left: 20px;
 }
+
+#dynamic-current-user-link {
+    font-family: "Montserrat";
+    color: rgb(101, 141, 74);
+    margin-right: 40px;
+    margin-top: 14px;
+    font-size: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;;
+}
+
+#dynamic-current-user-link:hover {
+    background-color: rgba(219, 191, 150, .5);
+    color: rgb(101, 141, 74);
+    margin-bottom: 4px;
+}
+
+#dynamic-current-user {
+    font-family: "Montserrat";
+    color: rgb(101, 141, 74);
+    margin-right: 40px;
+    margin-top: 14px;
+    font-size: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+#dynamic-current-user:hover {
+    background-color: rgba(219, 191, 150, .5);
+    color: rgb(101, 141, 74);
+    margin-bottom: 4px;
+}
+
+
+
 
 .topnav a {
     float: center;
     color: rgb(101, 141, 74);
     text-align: center;
-    padding: 0px;
-    margin: 5px;
+    padding-right: 0px;
+    margin: 15px;
     text-decoration: none;
     /* font-size: 17px; */
     font-family: 'Montserrat'
@@ -48,10 +87,16 @@
 }
 
 .links {
-    font-size: 18px;
-    padding-top: 0px;
-    margin-top: 0%;
-    border-top: 0%;
+    font-size: 22px;
+    padding-top: 4px;
+    /* margin-top: 0%;
+    border-top: 0%; */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
 } 
 
  .bag{
@@ -61,5 +106,6 @@
 .links a:hover {
     background-color: rgba(219, 191, 150, .5);
     color: rgb(101, 141, 74);
+    /* margin: 10px; */
 
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import HomePage from '../pages/HomePage'
 import {auth} from '../../src/firebase/firebase.utils'
+import {connect} from 'react-redux'
 // import {connect} from 'react-redux'
 import '../styles/navbar.styles.css'
 // import Hat from '../components/Hat'
@@ -22,13 +23,16 @@ class NavBar extends React.Component {
                     <Link onClick={this.props.hideImage} to="/tops">Tops</Link>
                     <Link onClick={this.props.hideImage} to="/bottoms">Bottoms</Link>
                     <Link onClick={this.props.hideImage} to="/hats">Hats</Link>
-                    <Link onClick={this.props.hideImage} to="/signUp">SignUp/SignIn</Link>
+                    {/* <Link onClick={this.props.hideImage} to="/signUp">SignUp/SignIn</Link> */}
                     {/* <Link to="/logout">Sign Out</Link> */}
                     {/* <Link to="/current_user">Current User</Link> */}
                     {/* <Link to="/logout" onClick ={this.handleClick}>Log Out</Link> */}
                     {/* <Link className="bag" onClick={this.props.hideImage}>My Bag</Link> */}
                 </div>
-                {currentUser ? <div onClick={() => auth.signOut()}>Sign out</div> : <Link to='login'>Login</Link>}
+                {currentUser ? <div id="dynamic-current-user" onClick={() => auth.signOut()}>Sign out</div> : <Link id="dynamic-current-user-link" onClick={this.props.hideImage} to="/signUp">SignUp/SignIn</Link> }
+                {/* <Link onClick={this.props.hideImage} to="/signUp">SignUp/SignIn</Link>} */}
+
+                {/* <Link className="dynamic-current-user" to='login'>Login</Link>} */}
                 
                 {/* <a className="new-arrivals" href="www.cc.com">New Arrivals</a> */}
                 
@@ -37,4 +41,10 @@ class NavBar extends React.Component {
     }
 }
 
-export default NavBar
+
+//state obj passed into mapStateToProps is the root reducer's state
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser 
+})
+
+export default connect(mapStateToProps)(NavBar)

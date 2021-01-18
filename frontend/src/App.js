@@ -7,20 +7,15 @@ import NavBar from './components/NavBar'
 import SignUpSignIn from './pages/SignUpSignIn'
 import {auth, createUserProfileDoc} from './firebase/firebase.utils'
 import {connect} from 'react-redux'
+import {setCurrentUser} from './redux/user/user.actions'
 // import {setCurrentUser} from './redux/user/user.actions'
 // import Routes from './components/Routes'
 // import SessionContext from './redux/setSessionCookie'
 
 class App extends React.Component {
 
-  constructor(){
-    super()
-    this.state = {
-      currentUser: null
-    }
-  }
-
   componentDidMount(){
+    // const setCurrentUser = this.props
     //user parameter is the user state in my app
     //auth subscriber (onAuthStateChanged) is always listening to user param and keeps sending
     //user authenticated obj UNTIL user signs out
@@ -32,19 +27,14 @@ class App extends React.Component {
       if(userAuth){
         const userRef = await createUserProfileDoc(userAuth)
         userRef.onSnapshot(snapShot => {
-          this.setState({
-            currentUser: {
+          this.props.setCurrentUser({
               id: snapShot.id,
               ...snapShot.data()
-            }
           })
-          console.log(this.state)
-          })
-        
+        })
       }
-      this.setState({
-        currentUser: userAuth
-      })
+      setCurrentUser(userAuth)
+      // console.log(setCurrentUser)
     })
   }
 
@@ -62,8 +52,7 @@ class App extends React.Component {
           
             <>
             
-            <NavBar currentUser={this.state.currentUser} hideImage={this.hideImage} />  
-            {console.log('in nav bar',this.state.currentUser)}
+            <NavBar hideImage={this.hideImage} />  
              <Switch>  
               <Route exact path='/'><HomePage /></Route>
               <Route path="/hats"><HatContainer /></Route>
@@ -86,8 +75,9 @@ class App extends React.Component {
 // })
 
 
-// const mapDispatchToProps = dispatch => ({
-//   setCurrentUser: user => dispatch(setCurrentUser(user))
-// })
-export default App
-// connect(mapStateToProps, mapDispatchToProps)(App)
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+})
+//dispatch is way for redux to know whatever object being passed is an ACTION object
+
+export default connect(null, mapDispatchToProps)(App)

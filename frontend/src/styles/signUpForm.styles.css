@@ -12,13 +12,14 @@
     margin: 0px 20px 20px 66px;
     padding: 0px 30px 10px 85px;
     font-family: "Montserrat";
-    color: rgb(29, 73, 3)
-;}
+    color: rgb(29, 73, 3);
+}
 
 .form-label {
     padding: 6px 30px 10px 0px;
     margin: 8px 4px 8px 150px;
     font-family: 'Montserrat';
+    color: rgb(29, 73, 3);
 }
 
 .sign-up-form-div {
@@ -29,17 +30,20 @@
 #submit-button {
     padding: 6px 10px 6px 10px;
     margin: 15px 20px 10px 150px;
-    width: 90px;
+    width: 150px;
+    font-size: 16px;
     border: 2px solid burlywood;
     font-family: 'Montserrat';
     cursor: pointer;
+    color: rgb(29, 73, 3);
 }
 #submit-button:hover {
     background-color:rgb(228, 241, 221)
 }
 #submit-button:active {
-    background-color:rgb(205, 241, 184);
+    background-color:rgb(178, 216, 156);
     transform: translateY(4px);
+    /* border-color: burlywood; */
 }
 
     /* .form-input:focus {
