@@ -1,5 +1,9 @@
 import React from 'react'
 import '../styles/hat.styles.css'
+import {connect} from 'react-redux'
+import {addToCart} from '../redux/cart/cart.actions'
+
+
 
 const Top = ({item, addToCart}) => {
     return (
@@ -9,11 +13,21 @@ const Top = ({item, addToCart}) => {
                 <h4 className="item-title">{item.name}</h4>
                 <img className="image" src={item.imageUrl} width="250px" height="300px" />
                 <p className="price">${item.price}</p>
-                <button className="add-btn">Add to Cart</button>
+                <button onClick={() => addToCart(item)} className="add-btn">Add to Cart</button>
                 </div>
             ))}
         </div>
     )
 }
 
-export default Top
+const mapDispatchToProps = dispatch => ({
+    addToCart: cartItem => dispatch(addToCart(cartItem))
+})
+
+// const mapStateToProps = state => ({
+//     item: state.item
+// })
+
+
+
+export default connect(null, mapDispatchToProps)(Top)

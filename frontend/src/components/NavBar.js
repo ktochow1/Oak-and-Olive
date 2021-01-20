@@ -4,7 +4,7 @@ import HomePage from '../pages/HomePage'
 import {auth} from '../../src/firebase/firebase.utils'
 import {connect} from 'react-redux'
 import CartIcon from './Cart-Icon'
-// import {connect} from 'react-redux'
+
 import '../styles/navbar.styles.css'
 // import Hat from '../components/Hat'
 
@@ -45,7 +45,8 @@ class NavBar extends React.Component {
 
 //state obj passed into mapStateToProps is the root reducer's state
 const mapStateToProps = state => ({
-    currentUser: state.user.currentUser 
+    currentUser: state.user.currentUser
+
 })
 
 export default connect(mapStateToProps)(NavBar)

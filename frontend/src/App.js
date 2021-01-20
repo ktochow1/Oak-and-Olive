@@ -78,4 +78,4 @@ now have access to this.props.currentUser  */
 
  /* /* /* //(dispatch) is way for redux to know whatever object being passed is an ACTION object  */
 
-export default App
+export default connect(mapStatToProps, mapDispatchToProps)(App)
