@@ -27,8 +27,8 @@ class HatContainer extends React.Component {
         const {collections} = this.state
          
         // console.log(this.state)
-        const hatItems = collections.filter((items, idx) => idx < 1).map(({id, ...otherItemProps}) => (
-            <Hat key={id} {...otherItemProps} />
+        const hatItems = collections.filter((items, idx) => idx < 1).map((item) => (
+            <Hat key={item.id} item={item} />
         ))
         // const bottomItems = collections.filter((items, idx) => idx < 2 && idx > 1, console.log(this.props)).map(({id, ...otherItemProps}) => (
         //     <Bottom key={id} {...otherItemProps} />

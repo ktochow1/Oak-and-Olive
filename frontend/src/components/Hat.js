@@ -1,6 +1,9 @@
 import React from 'react'
 import '../styles/hat.styles.css'
-import {Link} from 'react-router-dom'
+
+import {connect} from 'react-redux'
+import { addToCart } from '../redux/cart/cart.actions'
+// import {Link} from 'react-router-dom'
 // import {useRouteMatch} from 'react-router-dom'
 // import INVENTORY_DATA from '../Inventory/inventoryData'
 
@@ -31,24 +34,55 @@ import {Link} from 'react-router-dom'
 // }
 
 
-
-const Hat = ({title, items}) => (
+// const Hat = ({title, items, addToCart})
+const Hat = ({item, addToCart}) => {
     
-    <div  className="hat-div">
-    {/* style={{gridRowEnd: `span ${this.props.span}`}} */}
-        {/* <h2 className="category-title">{title.toUpperCase()}</h2> */}
-        {items.map((item) => (
+    // const {id, name, imageUrl, price} = item;
+    console.log(item.items)
+    // console.log(this.props)
+    return (
+    <div  className="collection-div">
+        {item.items.map((item) => (
             <div className="item-div" key={item.id}>
                 <h4 className="item-title">{item.name}</h4>
                 <img className="image" src={item.imageUrl} width="250px" height="auto"></img>
                 {/* <img ref={this.props.imageRef} src={item.imageUrl} width="250px" height="auto"></img> */}
                 <p className="price">${item.price}</p>
                 {/* {console.log(item)} */}
+                <button onClick={() => addToCart(item)} className="add-btn">Add to Cart</button>
             </div>
-
-        ))}
+         ))}
     </div>
-)
+    )
+}
+
+function handleClick(event){
+    console.log("click")
+    // props.addToCart()
+    // console.log(event.target.parentElement.childNodes)
+    let dataArr = event.target.parentElement.childNodes
+    // let title = dataArr[0].innerHTML
+    // let image = dataArr[1].currentSrc 
+    // let price = dataArr[2].innerHTML
+    let cartItem = {
+        title: dataArr[0].innerHTML,
+        image: dataArr[1].currentSrc,
+        price: dataArr[2].innerHTML
+    }
+    // console.log({cartItem)}
+    addToCart(cartItem)
+
+    
+
+}
+
+const mapDispatchToProps = (dispatch) => ({
+    addToCart: cartItem => dispatch(addToCart(cartItem))
+})
+
+// const mapStateToProps = ({cart}) => ({
+//     addToCart: cart.addToCart
+// })
 
 
-export default Hat
+export default connect(null, mapDispatchToProps)(Hat)

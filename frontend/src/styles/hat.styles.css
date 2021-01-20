@@ -1,4 +1,4 @@
-.hat-div {
+.collection-div {
     /* padding: 5px; */
     /* flex: 33.33%; */
     /* margin-left: auto; */
@@ -13,7 +13,7 @@
     /* width: 33.33%; */
     border: 0px;
     margin: 2px;
-    background-color: antiquewhite;
+    background-color: rgb(255, 255, 255);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     grid-gap: 10px;
@@ -22,11 +22,12 @@
 }
 
 .category-title {
-    font-size: 20px;
+    font-size: 30px;
     font-family: Montserrat;
     color: rgb(101, 141, 74);
     align-self: center;
-    
+    padding-bottom: 2%;
+    background-color: rgb(255, 255, 255);
 }
 
 .item-title {
@@ -54,4 +55,24 @@
     font-size: 10px;
     margin: 2px;
     /* padding: 5px; */
+}
+
+.add-btn {
+    /* margin-top: 5px; */
+    margin-left: 65px;
+    padding-top: 3px;
+    justify-items: center;
+    border: 2px solid burlywood;
+    font-family: "Montserrat";
+    border-radius: 2px;
+    background-color: white;
+}
+
+.add-btn:hover {
+    background-color:rgb(224, 241, 213);
+}
+
+.add-btn:active{
+    background-color:rgb(205, 241, 184);
+    transform: translateY(1px);
 }

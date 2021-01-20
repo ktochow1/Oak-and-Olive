@@ -6,7 +6,7 @@
     border: 2px solid burlywood;
     font-size: 16px;
     font-family: 'Montserrat';
-
+    border-radius: 2px;
 }
 #signup-title {
     margin: 0px 20px 20px 66px;
@@ -25,6 +25,7 @@
 .sign-up-form-div {
     float: left;
     width: 50%;
+    background-color: rgb(255, 255, 255);
 }
 
 #submit-button {
@@ -36,6 +37,8 @@
     font-family: 'Montserrat';
     cursor: pointer;
     color: rgb(29, 73, 3);
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
 }
 #submit-button:hover {
     background-color:rgb(228, 241, 221)

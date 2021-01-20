@@ -1,5 +1,6 @@
 import React from 'react'
 import HomePage from './pages/HomePage'
+import TopContainer from './containers/TopContainer'
 import HatContainer from './containers/HatContainer'
 import BottomContainer from './containers/BottomContainer'
 import {Route, Switch, Redirect} from 'react-router-dom'
@@ -13,7 +14,7 @@ import {setCurrentUser} from './redux/user/user.actions'
 // import SessionContext from './redux/setSessionCookie'
 
 class App extends React.Component {
-
+  
   componentDidMount(){
     // const setCurrentUser = this.props
     //user parameter is the user state in my app
@@ -43,41 +44,38 @@ class App extends React.Component {
   }
 
   unsubscribeFromAuth = null 
-  
-
 
     render(){
         return(
-          // <SessionContext.Provider value={}>
-          
-            <>
-            
+          <div>
             <NavBar hideImage={this.hideImage} />  
              <Switch>  
+              <Route path="/tops"><TopContainer /></Route>
               <Route exact path='/'><HomePage /></Route>
               <Route path="/hats"><HatContainer /></Route>
-              <Route path="/signUp" render={() => this.state.currentUser ? (<Redirect to='/' />) : (<SignUpSignIn />)}><SignUpSignIn /></Route>
+              <Route exact path="/signUp" render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignUpSignIn />)} />
               <Route path="/bottoms"><BottomContainer/></Route>
-              {/* <Route path="/current_user"></Route> */}
-              {/* <Route path="/logout"> */}
-               
-              {/* </Route> */}
-            </Switch>   
-           {/* </SessionContext.Provider> */}
-          </>
+            </Switch>
+          </div>
+          
         )
-    }
+        }
+    
 }
 
 
-// const mapStateToProps = ({user})=> ({
-//   currentUser: user.currentUser
-// })
 
+const mapStatToProps = ({user}) => ({
+  currentUser: user.currentUser
+}) 
 
-const mapDispatchToProps = dispatch => ({
+/* off of state destructure userReducer => ({user})
+now have access to this.props.currentUser  */
+
+ const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
-})
-//dispatch is way for redux to know whatever object being passed is an ACTION object
+})  
 
-export default connect(null, mapDispatchToProps)(App)
+ /* /* /* //(dispatch) is way for redux to know whatever object being passed is an ACTION object  */
+
+export default App

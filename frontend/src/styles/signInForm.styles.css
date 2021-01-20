@@ -12,7 +12,8 @@
     font-family: "Montserrat";
     align-content: center;
     align-self: center;
-    color: rgb(29, 73, 3)
+    color: rgb(29, 73, 3);
+    
 }
 
 .SI-form-input {
@@ -23,12 +24,13 @@
     border: 2px solid burlywood;
     font-size: 16px;
     font-family: 'Montserrat';
-
+    border-radius: 2px;
 }
 
 .sign-in-form-div {
     float: right;
     width: 50%;
+    background-color: rgb(255, 255, 255);
 }
 
 .submit-button {
@@ -40,6 +42,8 @@
     font-family: 'Montserrat';
     cursor: pointer;
     color: rgb(29, 73, 3);
+    border-radius: 2px;
+    background-color: rgb(255, 255, 255);
     /* box-shadow: 0 9px #999; */
 }
 .submit-button:hover {
@@ -52,9 +56,9 @@
 }
 
 #google-signin-btn {
-    background-color: rgb(205, 241, 184);
+    background-color: rgb(223, 241, 212);
     font-size: 18px;
 }
 #google-signin-btn:active {
-    background-color: rgb(181, 212, 163);
+    background-color: rgb(174, 214, 150);
 }
