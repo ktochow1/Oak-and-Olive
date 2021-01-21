@@ -38,7 +38,7 @@ import { addToCart } from '../redux/cart/cart.actions'
 const Hat = ({item, addToCart}) => {
     
     // const {id, name, imageUrl, price} = item;
-    console.log(item.items)
+    // console.log(item.items)
     // console.log(this.props)
     return (
     <div  className="collection-div">

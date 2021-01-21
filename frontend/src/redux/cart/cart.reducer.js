@@ -3,7 +3,7 @@ import {addItem} from './cart.helpers'
 
 
  const cartReducer = (state={cartItems: []}, action) => {
-     console.log(state)
+    //  console.log(state)
     switch(action.type){
         case 'ADD_TO_CART':
 
