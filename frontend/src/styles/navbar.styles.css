@@ -1,12 +1,12 @@
 .topnav {
     background-color: rgb(255, 255, 255);
     overflow: hidden;
-    padding-bottom: 2%;
+    margin-bottom: 1px;
     padding-top: 0%;
     text-align: center;
     height: 100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     /* margin-bottom: 25px; */
 
 } 

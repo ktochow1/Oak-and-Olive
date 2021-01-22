@@ -28,6 +28,9 @@ class NavBar extends React.Component {
                     {/* <Link to="/logout">Sign Out</Link> */}
                     {/* <Link to="/current_user">Current User</Link> */}
                     {/* <Link to="/logout" onClick ={this.handleClick}>Log Out</Link> */}
+                    {/* <hr className="divider" /> */}
+                    {/* <CartIcon /> */}
+                    {/* {currentUser ? <div id="dynamic-current-user" onClick={() => auth.signOut()}>Sign out</div> : <Link id="dynamic-current-user-link" onClick={this.props.hideImage} to="/signUp">Sign In</Link> } */}
                 </div>
                 <CartIcon />
                 {currentUser ? <div id="dynamic-current-user" onClick={() => auth.signOut()}>Sign out</div> : <Link id="dynamic-current-user-link" onClick={this.props.hideImage} to="/signUp">Sign In</Link> }

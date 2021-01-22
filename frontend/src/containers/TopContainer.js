@@ -13,7 +13,7 @@ class TopContainer extends React.Component {
     }
 
     render(){
-        {console.log(this.state)}
+        // {console.log(this.state)}
         const {collections} = this.state
         const allTops = collections.filter((items, idx) => (idx === 2)).map(item => (
             <Top key={item.id} item={item} /> 

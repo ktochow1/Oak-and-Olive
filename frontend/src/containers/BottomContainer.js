@@ -16,7 +16,7 @@ class BottomContainer extends React.Component {
         
 
         const {collections} = this.state
-        console.log(collections[1].items)
+        // console.log(collections[1].items)
         const bottomItems = collections.filter((items, idx) => (idx === 1)).map(item => (
             // collections.log({...otherPropItems}),
             <Bottom key={item.id} item={item}/>

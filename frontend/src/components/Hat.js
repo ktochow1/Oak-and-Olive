@@ -45,7 +45,7 @@ const Hat = ({item, addToCart}) => {
         {item.items.map((item) => (
             <div className="item-div" key={item.id}>
                 <h4 className="item-title">{item.name}</h4>
-                <img className="image" src={item.imageUrl} width="250px" height="auto"></img>
+                <img className="image" src={item.imageUrl} width="250px" height="300px"></img>
                 {/* <img ref={this.props.imageRef} src={item.imageUrl} width="250px" height="auto"></img> */}
                 <p className="price">${item.price}</p>
                 {/* {console.log(item)} */}

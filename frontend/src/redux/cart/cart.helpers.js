@@ -13,13 +13,3 @@ export const addItem = (cartItems, itemToAdd) => {
     
     
 }
-    
-        
-        
-            //all the cartItems,
-            //update quantity++
-    
-    
-        //return all cartItems,
-        //return initial quantity value of  
-

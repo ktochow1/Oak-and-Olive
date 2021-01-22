@@ -3,7 +3,7 @@ import {addItem} from './cart.helpers'
 
 
  const cartReducer = (state={cartItems: []}, action) => {
-    //  console.log(state)
+    console.log(state, action)
     switch(action.type){
         case 'ADD_TO_CART':
 
@@ -11,6 +11,14 @@ import {addItem} from './cart.helpers'
                    ...state,
                    cartItems: addItem(state.cartItems, action.payload)
                 }
+        case 'INCREASE_QUANTITY':
+            console.log(action, state)
+            action.payload++
+            return {
+                ...state,
+                cartItems: [...state.cartItems]
+                
+            }
 
         default:
             return state

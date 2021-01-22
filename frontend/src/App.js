@@ -9,6 +9,7 @@ import SignUpSignIn from './pages/SignUpSignIn'
 import {auth, createUserProfileDoc} from './firebase/firebase.utils'
 import {connect} from 'react-redux'
 import {setCurrentUser} from './redux/user/user.actions'
+import Checkout from './pages/Checkout'
 // import {setCurrentUser} from './redux/user/user.actions'
 // import Routes from './components/Routes'
 // import SessionContext from './redux/setSessionCookie'
@@ -49,12 +50,14 @@ class App extends React.Component {
         return(
           <div>
             <NavBar hideImage={this.hideImage} />  
+            <hr className="divider" />
              <Switch>  
               <Route path="/tops"><TopContainer /></Route>
               <Route exact path='/'><HomePage /></Route>
               <Route path="/hats"><HatContainer /></Route>
               <Route exact path="/signUp" render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignUpSignIn />)} />
               <Route path="/bottoms"><BottomContainer/></Route>
+              <Route path="/checkout"><Checkout /></Route>
             </Switch>
           </div>
           

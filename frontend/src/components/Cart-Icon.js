@@ -1,5 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import Checkout from '../pages/Checkout'
+import {Link} from 'react-router-dom'
 
 import {ReactComponent as ShoppingIcon} from '../assets/shopping-bag.svg'
 
@@ -7,7 +9,8 @@ import '../styles/cart-icon.styles.css'
 
 const CartIcon = (state) => (
     <div className="cart-icon">
-        <ShoppingIcon className="shopping-icon" />
+    
+    <Link to="/checkout"><ShoppingIcon className="shopping-icon" component={Checkout} to="/checkout"/></Link>
         {/* <span className="item-count">{addItem(state)}</span> */}
         <span className="item-count">{addItem(state)}</span>
         {/* {console.log(addItem(state))} */}
