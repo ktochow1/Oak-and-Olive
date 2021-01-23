@@ -3,31 +3,43 @@ import '../styles/checkout.styles.css'
 
 import {connect} from 'react-redux'
 import {increaseQuantity} from '../redux/cart/cart.actions'
+import {decreaseQuantity} from '../redux/cart/cart.actions'
+import {removeItem} from '../redux/cart/cart.actions'
 
 class Checkout extends React.Component {
  
     allItems = () => {
         let cartProps = this.props.cart.cartItems
+        
         let cartItem = cartProps.map(item => {
             return (
-                <div className="each-item" id="border">
+                <div className="each-item" id={item.id}>
                     <p className="item-style">{item.name}</p>
                     <img id="thumbnail" className="item-style" src={item.imageUrl} />
                     <p className="item-style">price {item.price}</p>
-                    <p>-</p>
+                    <p onClick={this.handleClickDecrease}>-</p>
                     <p className="item-style">quantity {item.quantity}</p>
-                    <p onClick={this.handleClick}>+</p>
+                    <p onClick={this.handleClickIncrease}>+</p>
+                    <p onClick={this.handleClickRemove}>x remove</p>
                 </div>
             )
         })
         return cartItem 
     }
 
-    handleClick = event => {
-        let amount = event.target.previousElementSibling.innerHTML.split(' ')[1]
-        let increase = Number(amount)
-        this.props.increaseQuantity(increase)
-        // console.log(event)
+    handleClickIncrease = event => {
+        this.props.increaseQuantity(event.target.parentElement)
+    }
+
+    handleClickDecrease = event => {
+        this.props.decreaseQuantity(event.target.parentElement)
+    }
+
+    handleClickRemove = event => {
+        // console.log(event.target.parentElement.id)
+
+        this.props.removeItem(event.target.parentElement)
+
     }
 
     total = () => {
@@ -72,7 +84,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    increaseQuantity: item => dispatch(increaseQuantity(item))
+    increaseQuantity: item => dispatch(increaseQuantity(item)),
+    decreaseQuantity: item => dispatch(decreaseQuantity(item)),
+    removeItem: item => dispatch(removeItem(item)),  
 })
 
 

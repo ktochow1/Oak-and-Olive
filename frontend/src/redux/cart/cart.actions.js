@@ -4,6 +4,16 @@ export const addToCart = item => ({
 })
 
 export const increaseQuantity = item => ({
-    type: 'CHANGE_QUANTITY',
+    type: 'INCREASE_QUANTITY',
+    payload: item
+}) 
+
+export const decreaseQuantity = item => ({
+    type: 'DECREASE_QUANTITY',
+    payload: item
+})
+
+export const removeItem = item => ({
+    type: 'REMOVE_ITEM',
     payload: item
 })
