@@ -22,7 +22,7 @@ const CartIcon = (state) => (
 
 function addItem(state){
     if(state.cart.cartItems.length === 0){
-        return 0
+        return;
     }
     if(state.cart.cartItems.length > 0){
         let quantityArray = state.cart.cartItems.map((item) => {

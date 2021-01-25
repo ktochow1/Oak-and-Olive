@@ -6,6 +6,8 @@ import {increaseQuantity} from '../redux/cart/cart.actions'
 import {decreaseQuantity} from '../redux/cart/cart.actions'
 import {removeItem} from '../redux/cart/cart.actions'
 
+import TakeMoney from '../components/TakeMoney'
+
 class Checkout extends React.Component {
  
     allItems = () => {
@@ -17,9 +19,9 @@ class Checkout extends React.Component {
                     <p className="item-style">{item.name}</p>
                     <img id="thumbnail" className="item-style" src={item.imageUrl} />
                     <p className="item-style">price {item.price}</p>
-                    <p onClick={this.handleClickDecrease}>-</p>
-                    <p className="item-style">quantity {item.quantity}</p>
                     <p onClick={this.handleClickIncrease}>+</p>
+                    <p className="item-style">quantity {item.quantity}</p>
+                    <p onClick={this.handleClickDecrease}>-</p>
                     <p onClick={this.handleClickRemove}>x remove</p>
                 </div>
             )
@@ -64,6 +66,7 @@ class Checkout extends React.Component {
         return(
             <div className="all-items">
                 {this.allItems()}  
+                <TakeMoney />
                 <p id="total">{this.total()}</p>
             </div>         
         )

@@ -18,6 +18,7 @@ class InventoryContainer extends React.Component {
                     <>
                         <Hat key={id} {...otherItemProps} />
                         <Bottom key={id} {...otherItemProps}/>
+                        
                     </>
                 ))
             }</div>
