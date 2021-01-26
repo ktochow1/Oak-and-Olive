@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
-gem 'devise' #used for authentication/authorization
+# gem 'devise' #used for authentication/authorization
 gem 'haml' #templating tool for rendering user pages
 gem 'jquery-rails' 
 gem 'money-rails' #displays formatted money values

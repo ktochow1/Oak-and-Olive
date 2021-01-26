@@ -1,19 +1,24 @@
 Rails.application.routes.draw do
+  # devise_for :users
+  # get '/', to: 'orders#index'
+  # post '/orders/submit', to: 'orders#submit'
   # resources :users
   namespace :api do
     namespace :v1 do
-      get 'tests', to: 'tests#index'
+      # get 'tests', to: 'tests#index'
+      get '/popular_products', to: 'popular_products#index'
+      post '/popular_products_new', to: 'popular_products#create'
     end
   end
 
-  namespace :api do 
-    namespace :v1 do 
-      get '/users' => 'users#index' 
-      post '/users/new' => 'users#create'
-      post '/users', to: 'users#login'
+  # namespace :api do 
+  #   namespace :v1 do 
+  #     get '/users' => 'users#index' 
+  #     post '/users/new' => 'users#create'
+  #     post '/users', to: 'users#login'
       
-    end 
-  end 
+  #   end 
+  # end 
 
   # post '/login', 
 
@@ -21,7 +26,7 @@ Rails.application.routes.draw do
   # get '/current_user' to: 'application#current_user'
 
  
-  delete '/logout', to: 'sessions#end'
+  # delete '/logout', to: 'sessions#end'
   # post '/login' => 'sessions#login'
 
   # get '/auth/:provider/callback' => 'sessions#omniauth'

@@ -9,6 +9,13 @@ import {removeItem} from '../redux/cart/cart.actions'
 import TakeMoney from '../components/TakeMoney'
 
 class Checkout extends React.Component {
+
+    // constructor(props){
+    //     super(props)
+    //     this.state = {
+    //         total: 0
+    //     }
+    // }
  
     allItems = () => {
         let cartProps = this.props.cart.cartItems
@@ -66,21 +73,13 @@ class Checkout extends React.Component {
         return(
             <div className="all-items">
                 {this.allItems()}  
-                <TakeMoney />
+                <TakeMoney price={this.total()} items={this.props.cart.cartItems}/>
                 <p id="total">{this.total()}</p>
             </div>         
         )
     }
 }
 
-
-
-
-/* <ul>
-    <li>have option to increase/decrease quantity</li>
-    <li>pay with stripe api </li>
-    <li>style page</li>
-</ul>     */
 
 const mapStateToProps = state => ({
     cart: state.cart
@@ -89,7 +88,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     increaseQuantity: item => dispatch(increaseQuantity(item)),
     decreaseQuantity: item => dispatch(decreaseQuantity(item)),
-    removeItem: item => dispatch(removeItem(item)),  
+    removeItem: item => dispatch(removeItem(item)),
 })
 
 
