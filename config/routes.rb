@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       # get 'tests', to: 'tests#index'
       get '/popular_products', to: 'popular_products#index'
       post '/popular_products_new', to: 'popular_products#create'
+      get '/popular_products_sorted', to: 'popular_products#most_popular'
     end
   end
 

@@ -10,7 +10,7 @@ export const addItem = (cartItems, itemToAdd) => {
 }
 
 export const increaseQuantity = (cartItems, itemToIncrease) => {
-
+  console.log(cartItems, itemToIncrease)
   let intItemId = Number(itemToIncrease.id)
 
   const increaseQuantity = cartItems.find(cartItem => cartItem.id === intItemId)

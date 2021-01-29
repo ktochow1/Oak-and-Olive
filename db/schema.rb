@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_231544) do
+ActiveRecord::Schema.define(version: 2021_01_27_134919) do
 
   create_table "popular_products", force: :cascade do |t|
     t.string "name"
     t.integer "quantity"
     t.integer "category_id"
+    t.string "image_url"
   end
 
 end

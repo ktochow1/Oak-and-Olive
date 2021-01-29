@@ -9,13 +9,6 @@ import {removeItem} from '../redux/cart/cart.actions'
 import TakeMoney from '../components/TakeMoney'
 
 class Checkout extends React.Component {
-
-    // constructor(props){
-    //     super(props)
-    //     this.state = {
-    //         total: 0
-    //     }
-    // }
  
     allItems = () => {
         let cartProps = this.props.cart.cartItems
@@ -25,11 +18,13 @@ class Checkout extends React.Component {
                 <div className="each-item" id={item.id}>
                     <p className="item-style">{item.name}</p>
                     <img id="thumbnail" className="item-style" src={item.imageUrl} />
-                    <p className="item-style">price {item.price}</p>
-                    <p onClick={this.handleClickIncrease}>+</p>
+                    <p className="item-style">price {item.price}</p>  
+
+                   <p className="item-style" onClick={this.handleClickIncrease}>+</p>
                     <p className="item-style">quantity {item.quantity}</p>
-                    <p onClick={this.handleClickDecrease}>-</p>
-                    <p onClick={this.handleClickRemove}>x remove</p>
+                    <p className="item-style" onClick={this.handleClickDecrease}>-</p>              
+                    <p className="item-style" onClick={this.handleClickRemove}>x remove</p>
+                    <hr className="dashed"></hr>
                 </div>
             )
         })
@@ -37,6 +32,7 @@ class Checkout extends React.Component {
     }
 
     handleClickIncrease = event => {
+        console.log(this.props)
         this.props.increaseQuantity(event.target.parentElement)
     }
 
@@ -58,23 +54,31 @@ class Checkout extends React.Component {
         })
         if(allItems.length === 0){
             return (
-                <p>
+                <div className="center">
                     your cart is empty
-                </p>
+                </div>
             )
-        } else {
+        } 
+        
+        else {
             let totalPrice = allItems.reduce((accumulator, currentValue) => accumulator + currentValue)
             return (
-                <div>Total ${totalPrice}</div>)
+                <div className="center">Total ${totalPrice}</div>)
         }
     }
 
     render(){
         return(
             <div className="all-items">
-                {this.allItems()}  
-                <TakeMoney price={this.total()} items={this.props.cart.cartItems}/>
-                <p id="total">{this.total()}</p>
+                    {this.allItems()} 
+                    
+                    <p className="total">
+                    {this.total()}
+                    </p>
+                {/* </div> */}
+                <div id="center">
+                    {this.props.cart.cartItems.length === 0 ? <></> : <TakeMoney price={this.total()} items={this.props.cart.cartItems} />}
+                </div>
             </div>         
         )
     }

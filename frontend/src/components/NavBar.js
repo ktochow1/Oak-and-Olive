@@ -21,6 +21,7 @@ class NavBar extends React.Component {
             <div className="topnav">
                 <h1 className="title"><Link to="/">Oak and Olive</Link></h1>
                 <div className="links">
+                    <Link onClick={this.props.hideImage} to="/popular-products">Popular Products</Link>
                     <Link onClick={this.props.hideImage} to="/tops">Tops</Link>
                     <Link onClick={this.props.hideImage} to="/bottoms">Bottoms</Link>
                     <Link onClick={this.props.hideImage} to="/hats">Hats</Link>

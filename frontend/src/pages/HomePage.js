@@ -32,8 +32,8 @@ class HomePage extends React.Component {
                     <Route path="/bottoms">Bottoms</Route>
                 </Switch>   */}
                 {/* <div className="slideshow-container"> */}
-                    <div id="test" style={{visibility:"visible"}} className="home-page-image" >
-                        <img alt="a goddess" id="goddess"  src="https://images.unsplash.com/photo-1592531594467-3d89af555906?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" width="600" height="400"/>
+                    <div id="test" style={{visibility:"visible"}}  >
+                        <img alt="a goddess" id="goddess" className="home-page-image" src="https://images.unsplash.com/photo-1592531594467-3d89af555906?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" width="600" height="400"/>
                     </div>
                     {/* <div className="home-page-image">
                         <img src="https://images.unsplash.com/photo-1559582798-678dfc71ccd8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1000&q=80" width="600" height="auto"/>

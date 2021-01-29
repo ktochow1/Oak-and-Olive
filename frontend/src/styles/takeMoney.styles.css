@@ -1,4 +1,10 @@
 #checkout {
-    border: none;
-    background-color: white;
+    /* margin-top: 100%; */
+    margin-left: 37px;
+    margin-bottom: 5%;
+    /* border: none;
+    background-color: white; */
+    /* align-content: center; */
+    position: relative;
+    /* display: flex; */
 }

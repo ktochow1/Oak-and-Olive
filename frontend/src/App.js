@@ -1,5 +1,6 @@
 import React from 'react'
 import HomePage from './pages/HomePage'
+import PopularProducts from './components/PopularProducts'
 import TopContainer from './containers/TopContainer'
 import HatContainer from './containers/HatContainer'
 import BottomContainer from './containers/BottomContainer'
@@ -10,6 +11,7 @@ import {auth, createUserProfileDoc} from './firebase/firebase.utils'
 import {connect} from 'react-redux'
 import {setCurrentUser} from './redux/user/user.actions'
 import Checkout from './pages/Checkout'
+import '../src/styles/app.styles.css'
 // import {setCurrentUser} from './redux/user/user.actions'
 // import Routes from './components/Routes'
 // import SessionContext from './redux/setSessionCookie'
@@ -52,6 +54,7 @@ class App extends React.Component {
             <NavBar hideImage={this.hideImage} />  
             <hr className="divider" />
              <Switch>  
+             <Route path="/popular-products"><PopularProducts /></Route>
               <Route path="/tops"><TopContainer /></Route>
               <Route exact path='/'><HomePage /></Route>
               <Route path="/hats"><HatContainer /></Route>

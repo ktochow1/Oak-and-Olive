@@ -5,7 +5,7 @@ import '../styles/takeMoney.styles.css'
 
 const TakeMoney = ({price, items}) => {
     const amountForStripe = price * 100
-    console.log(items)
+    // console.log(items)
     // onToken = token => {
     //     fetch('/save-stripe-token', {
     //         method: 'POST',
@@ -21,7 +21,7 @@ const TakeMoney = ({price, items}) => {
         alert('Payment Successful')
     }
     const handleClick = event => {
-        console.log("click")
+        // console.log("click")
         console.log(items)
         fetch('http://localhost:3000/api/v1/popular_products_new', {
             method: 'POST',
@@ -31,12 +31,14 @@ const TakeMoney = ({price, items}) => {
                 'Accept': 'application/json',
             },
             body: JSON.stringify(items)
-        })
+        }).then(resp => resp)
          
     }
         return(
+            <div id="checkout">
+            {/* <button onClick={handleClick} id="checkout"> */}
             
-            <button onClick={handleClick} id="checkout">
+                
                 <StripeCheckout 
                 // token={this.onToken} stripeKey="my_PUBLISHABLE_stripekey"
                 token={onToken}
@@ -47,8 +49,11 @@ const TakeMoney = ({price, items}) => {
                 shippingAddress
                 amount={amountForStripe}
                 description={`Your total is $${price.props.children[1]}`}
-                 />
-            </button>
+                />
+            
+            
+                
+            </div>
             
         )
 }
