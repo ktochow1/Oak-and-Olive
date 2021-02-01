@@ -5,7 +5,7 @@ import '../styles/takeMoney.styles.css'
 
 const TakeMoney = ({price, items}) => {
     const amountForStripe = price * 100
-    // console.log(items)
+    console.log(items)
     // onToken = token => {
     //     fetch('/save-stripe-token', {
     //         method: 'POST',
@@ -21,7 +21,7 @@ const TakeMoney = ({price, items}) => {
         alert('Payment Successful')
     }
     const handleClick = event => {
-        // console.log("click")
+        console.log("click")
         console.log(items)
         fetch('http://localhost:3000/api/v1/popular_products_new', {
             method: 'POST',
@@ -35,7 +35,7 @@ const TakeMoney = ({price, items}) => {
          
     }
         return(
-            <div id="checkout">
+            <div onClick={handleClick} id="checkout">
             {/* <button onClick={handleClick} id="checkout"> */}
             
                 

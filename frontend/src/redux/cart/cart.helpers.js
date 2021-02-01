@@ -29,9 +29,8 @@ export const decreaseQuantity = (cartItems, itemToDecrease) => {
 }
 
 export const removeItem = (cartItems, itemToRemove) => {
-  // console.log(cartItems, removeItemId)
   let intItemId = Number(itemToRemove.id)
   let remainingItems = cartItems.filter(cartItem => cartItem.id !== intItemId)
-  // console.log(remainingItems)
   return remainingItems
 }
+

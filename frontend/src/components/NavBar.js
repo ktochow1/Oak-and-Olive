@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import HomePage from '../pages/HomePage'
 import {auth} from '../../src/firebase/firebase.utils'
 import {connect} from 'react-redux'
-import CartIcon from './Cart-Icon'
+import Cart from './Cart'
 
 import '../styles/navbar.styles.css'
 // import Hat from '../components/Hat'
@@ -33,7 +33,7 @@ class NavBar extends React.Component {
                     {/* <CartIcon /> */}
                     {/* {currentUser ? <div id="dynamic-current-user" onClick={() => auth.signOut()}>Sign out</div> : <Link id="dynamic-current-user-link" onClick={this.props.hideImage} to="/signUp">Sign In</Link> } */}
                 </div>
-                <CartIcon />
+                <Cart />
                 {currentUser ? <div id="dynamic-current-user" onClick={() => auth.signOut()}>Sign out</div> : <Link id="dynamic-current-user-link" onClick={this.props.hideImage} to="/signUp">Sign In</Link> }
                 {/* <Link onClick={this.props.hideImage} to="/signUp">SignUp/SignIn</Link>} */}
 

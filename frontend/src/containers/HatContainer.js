@@ -45,5 +45,5 @@ class HatContainer extends React.Component {
         )
     }
 }
-
+ 
 export default HatContainer

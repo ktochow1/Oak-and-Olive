@@ -17,3 +17,16 @@ export const removeItem = item => ({
     type: 'REMOVE_ITEM',
     payload: item
 })
+
+export function requestItems(){
+    // console.log("hey")
+    return (dispatch) => {
+        dispatch({type: 'REQUEST_POPULAR_ITEMS'})
+        fetch('http://localhost:3000/api/v1/popular_products_sorted')
+        .then(resp =>  resp.json())
+        .then(data => {
+            // console.log(data, state)
+            dispatch({type: 'GET_ITEMS', data})
+        })
+    }
+}

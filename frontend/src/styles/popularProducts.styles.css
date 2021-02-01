@@ -1,0 +1,27 @@
+.collection {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+
+ } 
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    /* margin: 15px; */
+    font-family: "Montserrat";
+    /* border: 1px solid green; */
+}
+
+.page-title {
+    justify-content: center;
+    text-align: center;
+}
+
+.image {
+    border: 1px solid green;
+}

@@ -4,11 +4,11 @@
     background-color: rgb(255, 255, 255);
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    /* grid-template-columns: repeat(5); */
+     /* grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 5px;
     grid-auto-rows: 350px;
-    position: relative;
+    /* position: relative;  */
 
 }
 
@@ -48,13 +48,13 @@
 }
 
 .image {
-    object-fit:cover;
+    object-fit: cover;
     width: 100%;
     margin: 0%;
-    padding: 3px; 
+    padding: 2px; 
     position: relative;
-    border-top: 2px solid rgb(55, 95, 31);
-    border-bottom: 2px solid rgb(55, 95, 31);
+    border: 2px solid rgb(55, 95, 31);
+ 
 
     /* border-bottom-width: ; */
     vertical-align: -webkit-baseline-middle;

@@ -3,14 +3,17 @@ import {connect} from 'react-redux'
 import Checkout from '../pages/Checkout'
 import {Link} from 'react-router-dom'
 
-import {ReactComponent as ShoppingIcon} from '../assets/shopping-bag.svg'
+// import {ReactComponent as ShoppingIcon} from '../assets/shopping-bag.svg'
 
-import '../styles/cart-icon.styles.css'
+// import '../styles/cart-icon.styles.css'
 
-const CartIcon = (state) => (
+const Cart = (state) => (
     <div className="cart-icon">
     
-    <Link to="/checkout"><ShoppingIcon className="shopping-icon" component={Checkout} to="/checkout"/></Link>
+    <Link to="/checkout"><p className="shopping-icon" component={Checkout} to="/checkout">Cart</p>
+    {/* <ShoppingIcon className="shopping-icon" component={Checkout} to="/checkout" /> */}
+
+    </Link>
         {/* <span className="item-count">{addItem(state)}</span> */}
         <span className="item-count">{addItem(state)}</span>
         {/* {console.log(addItem(state))} */}
@@ -51,4 +54,4 @@ function addItem(state){
 const mapStateToProps = state => ({
     cart: state.cart
 })
-export default connect(mapStateToProps)(CartIcon)
+export default connect(mapStateToProps)(Cart)
