@@ -20,7 +20,6 @@ class Api::V1::PopularProductsController < ApplicationController
                     # @pop.category_id = item["category_id"]
                     @pop.save
                     # binding.pry
-                    
             end 
         else 
                 find_item.quantity += params["_json"][0]["quantity"]
@@ -30,17 +29,27 @@ class Api::V1::PopularProductsController < ApplicationController
 
     def most_popular
          pop = PopularProduct.all.sort{|a, b| a.category_id <=> b.category_id}
-         
-        #  hats = PopularProduct.all.sort_by{|item| item.category_id <= 5}
+
         hats = pop.find_all{|i| i.category_id <= 6}
+        sorted_hats = hats.sort_by{|item| item[:quantity]}
+        pop_hat = sorted_hats[-1]
+
         bottoms = pop.find_all{|i| i.category_id >= 7 && i.category_id <= 12}
+        sorted_bottoms = bottoms.sort_by{|item| item[:quantity]}
+        pop_bottom = sorted_bottoms[-1]
+
         tops = pop.find_all{|i| i.category_id >= 13}
+        sorted_tops = tops.sort_by{|item| item[:quantity]}
+        pop_top = sorted_tops[-1]
+
+        most_popular_items = [pop_hat, pop_bottom, pop_top]
+        all_items = [hats, tops, bottoms]
         #  binding.pry
         # #  pop.sort{|a, b| a.category_id === b.category_id}
          pop_sorted = pop.sort{|a, b| b.quantity <=> a.quantity && a.category_id <=> b.category_id}
         # #  pop_sorted.sort{|a, b| a.category_id = b.category_id}
-        # #  binding.pry
-         render json: pop_sorted
+         binding.pry
+         render json: most_popular_items
 
         
     end

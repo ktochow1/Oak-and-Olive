@@ -26,24 +26,27 @@ class PopularProducts extends React.Component {
     }
 
     render(){
-        console.log(this.props.cart.popularItems[0])
-        let items = this.props.cart.popularItems[0] === undefined ? <></> :
-        this.props.cart.popularItems[0].map((item) =>  ( 
+        // this.props.cart.popularItems.map((items) => items.map((item) => console.log(item)))
+        // let items = this.props.cart.popularItems[0] === undefined ? <></> :
+        // this.props.cart.popularItems[0].map((item) => {
+            // console.log(item)
+        
+        // ( 
             
-            <div className="item" >
-                <h4 key={item.id}>{item.name}</h4>
-                <img className="image" src={item.image_url} width="250px" height="300px"/>
-                <p >${item.price}</p>
-                <button  onClick={this.handleClick}>Add To Cart</button>
-            </div>
-            )
-        )
+        //     <div className="item" >
+        //         <h4 key={item.id}>{item.name}</h4>
+        //         <img className="image" src={item.image_url} width="250px" height="300px"/>
+        //         <p >${item.price}</p>
+        //         <button  onClick={this.handleClick}>Add To Cart</button>
+        //     </div>
+        //     )
+        // })
 
         return(
             <>
             <h2 className="page-title">popular items from each category</h2>
             <div className="collection">
-            {items}
+            {/* {items} */}
             </div>
             </>
         )
