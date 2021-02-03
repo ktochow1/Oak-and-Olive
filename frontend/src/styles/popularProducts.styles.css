@@ -1,16 +1,20 @@
 .collection {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
     grid-column-gap: 5px;
     grid-row-gap: 5px;
+    margin-right: 50px; 
+    margin-left: 50px;
+    /* grid-auto-rows: 350px; */
 
  } 
 
 .item{
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
+    text-align: center;
     padding: 5px;
     /* margin: 15px; */
     font-family: "Montserrat";
@@ -20,8 +24,35 @@
 .page-title {
     justify-content: center;
     text-align: center;
+    font-family: "Montserrat";
+    font-weight: lighter;
+    color: green;
+}
+
+.item-name {
+    text-align: center;
+    font-family: "Montserrat";
+    color:green;
+    font-weight: lighter;
+    /* border-bottom: 15px; */
+
 }
 
 .image {
     border: 1px solid green;
+    justify-self: center;
+}
+
+.item-price {
+    text-align: center;
+    /* margin-bottom: 5%; */
+}
+
+.item-btn {
+    text-align: center;
+    justify-content: center;
+    font-family: "Montserrat";
+    background-color: white;
+    border: 2px solid green;
+    /* margin-bottom: 5%; */
 }

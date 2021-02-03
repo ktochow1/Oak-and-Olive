@@ -1,5 +1,5 @@
 // import { addToCart } from './cart.actions'
-import { requestItems } from './cart.actions'
+// import { requestItems } from './cart.actions'
 import {addItem, decreaseQuantity, increaseQuantity, removeItem} from './cart.helpers'
 
 
@@ -7,8 +7,9 @@ import {addItem, decreaseQuantity, increaseQuantity, removeItem} from './cart.he
  const cartReducer = (state={cartItems: [], popularItems: [], requesting: false}, action) => {
     // console.log(state, action)
     switch(action.type){
-        case 'ADD_TO_CART':
 
+        case 'ADD_TO_CART':
+        console.log(state, action)
                 return {
                    ...state,
                    cartItems: addItem(state.cartItems, action.payload)
@@ -53,7 +54,7 @@ import {addItem, decreaseQuantity, increaseQuantity, removeItem} from './cart.he
             return {
                 ...state,
                 cartItems: [...state.cartItems],
-                popularItems: [...state.popularItems, action.data],
+                popularItems: [action.data],
                 requesting: false
             }
             

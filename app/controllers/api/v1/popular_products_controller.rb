@@ -43,12 +43,12 @@ class Api::V1::PopularProductsController < ApplicationController
         pop_top = sorted_tops[-1]
 
         most_popular_items = [pop_hat, pop_bottom, pop_top]
-        all_items = [hats, tops, bottoms]
+        
         #  binding.pry
         # #  pop.sort{|a, b| a.category_id === b.category_id}
          pop_sorted = pop.sort{|a, b| b.quantity <=> a.quantity && a.category_id <=> b.category_id}
         # #  pop_sorted.sort{|a, b| a.category_id = b.category_id}
-         binding.pry
+        #  binding.pry
          render json: most_popular_items
 
         

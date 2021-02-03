@@ -1,6 +1,5 @@
 import React from 'react'
 import '../styles/checkout.styles.css'
-
 import {connect} from 'react-redux'
 import {increaseQuantity} from '../redux/cart/cart.actions'
 import {decreaseQuantity} from '../redux/cart/cart.actions'
@@ -19,7 +18,6 @@ class Checkout extends React.Component {
                     <p className="item-style">{item.name}</p>
                     <img id="thumbnail" className="item-style" src={item.imageUrl} />
                     <p className="item-style">price {item.price}</p>  
-
                    <p className="item-style" onClick={this.handleClickIncrease}>+</p>
                     <p className="item-style">quantity {item.quantity}</p>
                     <p className="item-style" onClick={this.handleClickDecrease}>-</p>              
@@ -41,10 +39,7 @@ class Checkout extends React.Component {
     }
 
     handleClickRemove = event => {
-        // console.log(event.target.parentElement.id)
-
         this.props.removeItem(event.target.parentElement)
-
     }
 
     total = () => {
@@ -71,11 +66,9 @@ class Checkout extends React.Component {
         return(
             <div className="all-items">
                     {this.allItems()} 
-                    
                     <p className="total">
-                    {this.total()}
+                    {this.total()} 
                     </p>
-                {/* </div> */}
                 <div id="center">
                     {this.props.cart.cartItems.length === 0 ? <></> : <TakeMoney price={this.total()} items={this.props.cart.cartItems} />}
                 </div>

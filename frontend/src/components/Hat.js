@@ -7,6 +7,7 @@ import { addToCart } from '../redux/cart/cart.actions'
 
 
 const Hat = ({item, addToCart}) => {
+    console.log({item})
 
     return (
     <div  className="collection-div">
