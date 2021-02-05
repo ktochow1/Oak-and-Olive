@@ -14,7 +14,7 @@ const Hat = ({item, addToCart}) => {
         {item.items.map((item) => (
             <div className="item-div" key={item.id}>
                 <h4 className="item-title">{item.name}</h4>
-                <img className="image" src={item.imageUrl} width="200px" height="300px"></img>
+                <img className="image" src={item.imageUrl} width="250px" height="550px"></img>
                 <p className="price">${item.price}</p>
                 <button onClick={() => addToCart(item)} className="add-btn">Add to Cart</button>
             </div>

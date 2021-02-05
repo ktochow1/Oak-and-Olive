@@ -4,9 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 
 # gem 'devise' #used for authentication/authorization
-gem 'haml' #templating tool for rendering user pages
-gem 'jquery-rails' 
-gem 'money-rails' #displays formatted money values
+# gem 'haml' #templating tool for rendering user pages
+# gem 'jquery-rails' 
+# gem 'money-rails' #displays formatted money values
 gem 'rake'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -16,10 +16,10 @@ gem 'sqlite3', '~> 1.4'
 # gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
-gem 'carrierwave'
-gem 'active_model_serializers'
+# gem 'carrierwave'
+# gem 'active_model_serializers'
 # gem 'jwt'
-gem 'omniauth'
+# gem 'omniauth'
 gem 'dotenv-rails'
 # gem 'omniauth-google-oauth2'
 gem 'rack-cors'

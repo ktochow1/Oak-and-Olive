@@ -54,7 +54,7 @@ class PopularProducts extends React.Component {
         (
             <div className="item" key={item.id} id={item.id}>
             <h4 className="item-name" >{item.name}</h4>
-            <img className="image" src={item.image_url} alt="model" width="250px" height="300px"/>
+            <img className="image" src={item.image_url} alt="model" width="250px" height="380px"/>
             <p className="item-price">$ {item.price}</p>
             <button className="item-btn" onClick={this.handleClick}>Add To Cart</button>
         </div>

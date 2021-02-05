@@ -1,4 +1,6 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
+import HomePage from '../components/HomePageImage'
 
 import StripeCheckout from 'react-stripe-checkout';
 import '../styles/takeMoney.styles.css'
@@ -7,11 +9,13 @@ const TakeMoney = ({price, items}) => {
     const amountForStripe = price * 100
 
    const onToken = token => {
-        console.log(token)
+        // console.log(token)
         alert('Payment Successful')
+        return window.location.replace('http://localhost:3001/')
+
     }
     const handleClick = event => {
-        console.log("click")
+        // console.log("click")
         console.log(items)
         fetch('http://localhost:3000/api/v1/popular_products_new', {
             method: 'POST',
@@ -21,7 +25,9 @@ const TakeMoney = ({price, items}) => {
                 'Accept': 'application/json',
             },
             body: JSON.stringify(items)
-        }).then(resp => resp)     
+        }).then(resp => resp)  
+        
+
     }
 
         return(
@@ -37,8 +43,11 @@ const TakeMoney = ({price, items}) => {
                 shippingAddress
                 amount={amountForStripe}
                 description={`Your total is $${price.props.children[1]}`}
+
                 />
+                
             </div>
+
         )
 }
 

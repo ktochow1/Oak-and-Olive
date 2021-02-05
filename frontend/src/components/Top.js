@@ -13,7 +13,7 @@ const Top = ({item, addToCart}) => {
                 <div className="item-div" key={item.id}>
                 {console.log(item)}
                 <h4 className="item-title">{item.name}</h4>
-                <img className="image" src={item.imageUrl} width="250px" height="300px" />
+                <img className="image" src={item.imageUrl} width="250px" height="550px" />
                 <p className="price">${item.price}</p>
                 <button onClick={() => addToCart(item)} className="add-btn">Add to Cart</button>
                 </div>
