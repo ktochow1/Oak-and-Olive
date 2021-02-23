@@ -10,14 +10,17 @@ class TopContainer extends React.Component {
         this.state = {
             collections: INVENTORY_DATA,
         }
-    }
+    } 
+
+  
 
     render(){
-        // {console.log(this.state)}
         const {collections} = this.state
+        
         const allTops = collections.filter((items, idx) => (idx === 2)).map(item => (
             <Top key={item.id} item={item} /> 
         ))
+    
         return(
             <div>
             <p className="category-title">Tops</p>
@@ -25,7 +28,8 @@ class TopContainer extends React.Component {
             </div>
         )
     }
-
 }
+
+
 
 export default TopContainer

@@ -8,6 +8,7 @@ const Bottom = ({item, addToCart}) => {
    
     return (
         <div className="collection-div">
+        
         {item.items.map((item) => (
             <div className="item-div" key={item.id}>
                 <h4 className="item-title" >{item.name}</h4>

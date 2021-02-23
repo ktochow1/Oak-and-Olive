@@ -9,7 +9,7 @@ import {addItem, decreaseQuantity, increaseQuantity, removeItem} from './cart.he
     switch(action.type){
 
         case 'ADD_TO_CART':
-        console.log(state, action)
+        // console.log(state, action)
                 return {
                    ...state,
                    cartItems: addItem(state.cartItems, action.payload)
