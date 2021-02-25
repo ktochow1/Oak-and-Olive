@@ -3,6 +3,11 @@ export const addToCart = item => ({
     payload: item
 })
 
+export const sortItems = item => ({
+    type: 'SORT_ITEMS',
+    payload: item
+})
+
 export const increaseQuantity = item => ({
     type: 'INCREASE_QUANTITY',
     payload: item

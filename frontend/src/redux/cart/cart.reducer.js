@@ -1,23 +1,20 @@
 // import { addToCart } from './cart.actions'
 // import { requestItems } from './cart.actions'
-import {addItem, decreaseQuantity, increaseQuantity, removeItem} from './cart.helpers'
+import {addItem, decreaseQuantity, increaseQuantity, removeItem, sortPrice} from './cart.helpers'
 
 
 
  const cartReducer = (state={cartItems: [], popularItems: [], requesting: false}, action) => {
-    // console.log(state, action)
     switch(action.type){
-
+    
         case 'ADD_TO_CART':
-        // console.log(state, action)
+            console.log(action)
                 return {
                    ...state,
                    cartItems: addItem(state.cartItems, action.payload)
                 }
         case 'INCREASE_QUANTITY':
-            // console.log(action, state)
             increaseQuantity(state.cartItems, action.payload)
-            // action.payload++
             return {
                 ...state,
                 cartItems: [...state.cartItems],   
@@ -36,18 +33,15 @@ import {addItem, decreaseQuantity, increaseQuantity, removeItem} from './cart.he
                 ...state, 
                 cartItems: removeItem(state.cartItems, action.payload)       
             }
+
         case 'REQUEST_POPULAR_ITEMS':
-            // alert('Analyzing...')
-            // console.log(state, action.data)
             return{
                 ...state,
-                // cartItems: [...state.cartItems],
                 popularItems: [...state.popularItems],
                 cartItems: [...state.cartItems],
                 requesting: true,
-                
-                // cartItems: requestItems()
             }
+
         case 'GET_ITEMS':
             // alert('Loading...')
             // console.log(state, action.data)
@@ -57,6 +51,11 @@ import {addItem, decreaseQuantity, increaseQuantity, removeItem} from './cart.he
                 popularItems: [action.data],
                 requesting: false
             }
+        
+        case 'SORT_ITEMS':
+            console.log('reducer')
+            // console.log(action)
+            sortPrice(action.payload)
             
         default:
             return state

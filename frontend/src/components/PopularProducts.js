@@ -8,10 +8,6 @@ import '../styles/popularProducts.styles.css'
 
 class PopularProducts extends React.Component {
 
-    // constructor(){
-    //     super()
-    //     this.state = this.props.cart.popularItems
-    // }
 
     componentDidMount(){
        this.props.requestItems()

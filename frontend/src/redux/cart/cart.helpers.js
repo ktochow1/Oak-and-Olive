@@ -34,3 +34,6 @@ export const removeItem = (cartItems, itemToRemove) => {
   return remainingItems
 }
 
+export const sortPrice = (item) => {
+  console.log('helper', item)
+}
