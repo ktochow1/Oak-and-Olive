@@ -19,23 +19,37 @@ class Top extends React.Component {
             this.setState({clicked: true})
         }  
             
-        function sortByPrice(item){
-            let sorted = item.items.sort((a, b) => {
+        const sortByPrice = (item) => {
+            let sortedItems = [...this.props.item.items]
+            console.log(sortedItems)
+            let sorted 
+            sortedItems = sortedItems.sort((a, b) => {
                 if(a.price < b.price){
                     return -1
-                } 
+                }
                 if(a.price > b.price){
                     return 1
-                }
-                    return 0
+                } 
+                return 0
             })
-            item.items = sorted
-            return displaySortedTops(item)
+            // sortedItems = sorted
+            // let sorted = item.items.sort((a, b) => {
+            //     if(a.price < b.price){
+            //         return -1
+            //     } 
+            //     if(a.price > b.price){
+            //         return 1
+            //     }
+            //         return 0
+            // })
+            // item.items = sorted
+            return displaySortedTops(sortedItems)
             
         }
-                
-        function displaySortedTops(item){
-            return item.items.map((item) => (
+        
+        function displaySortedTops(items){
+            // console.log(item)
+            return items.map((item) => (
                             
              <div className="item-div" key={item.id}>
             {console.log(item)}
@@ -51,7 +65,7 @@ class Top extends React.Component {
             return item.items.map((item) => (
                             
             <div className="item-div" key={item.id}>
-            {console.log(item)}
+            {/* {console.log(item)} */}
             <h4 className="item-title">{item.name}</h4>
             <img className="image" src={item.imageUrl} width="250px" height="550px" />
             <p className="price">$ {item.price}</p>
@@ -64,12 +78,14 @@ class Top extends React.Component {
             <>
             <button onClick={handleClick}>Sort by Price</button>
             <div className="collection-div">
-            {this.state.clicked === false ? displayTops(this.props.item) : sortByPrice(this.props.item)}
+            {console.log(this.props.item.items)}
+            {this.state.clicked === false ? displayTops(this.props.item) : sortByPrice(this.props)}
             {console.log(this.state.clicked)}
             </div>
             </>
         )
     }
+    
     
 }
 
